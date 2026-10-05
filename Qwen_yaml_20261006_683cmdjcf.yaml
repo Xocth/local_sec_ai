@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # The AI Brain
+  ollama:
+    image: ollama/ollama
+    container_name: ollama_brain
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    # This tells Docker to reserve your NVIDIA GPU for this container
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    # This command automatically downloads the Qwen model when the container starts!
+    command: sh -c "ollama serve & sleep 5 && ollama pull qwen2.5:7b && wait"
+
+  # The Python Wrapper
+  fastapi:
+    build: .
+    container_name: fastapi_wrapper
+    ports:
+      - "8000:8000"
+    depends_on:
+      - ollama
+    environment:
+      - OLLAMA_HOST=http://ollama:11434
+    command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+
+volumes:
+  ollama_data:
