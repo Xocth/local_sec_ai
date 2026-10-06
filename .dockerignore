@@ -1,0 +1,10 @@
+.git
+.gitignore
+.venv
+__pycache__
+*.py[cod]
+.env
+Dockerfile
+docker-compose.yml
+README.md
+Qwen_yaml_*.yaml
