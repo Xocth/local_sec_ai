@@ -8,6 +8,7 @@ services:
         condition: service_completed_successfully
     environment:
       OLLAMA_HOST: http://ollama:11434
+      OLLAMA_MODEL: "${OLLAMA_MODEL:-qwen2.5:7b}"
     ports:
       - "${APP_PORT:-8000}:8000"
     restart: unless-stopped

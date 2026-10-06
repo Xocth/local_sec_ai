@@ -5,10 +5,12 @@ from pathlib import Path
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from requests import Request
+import os
 import ollama
 
 app = FastAPI() # Entry point for the FastAPI application.
 
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen2.5:7b")
 
 STATIC_DIR = Path(__file__).resolve().parent / "static"
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static") # Web files are served from the "static" directory.
@@ -26,6 +28,5 @@ def read_root():
 
 @app.post("/generate") #HTTP POST method for the /generate endpoint
 def generate(prompt: str):
-    response = ollama.chat(model="qwen2.5:7b", messages=[{"role": "user", "content": prompt}])
+    response = ollama.chat(model=OLLAMA_MODEL, messages=[{"role": "user", "content": prompt}])
     return {"response": response["message"]["content"]}
-

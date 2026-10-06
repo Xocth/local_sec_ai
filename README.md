@@ -16,6 +16,8 @@ A containerized security analyst using the AI model Qwen
 * **Dev Env**: VSCode -> WSL -> Debian + Docker 
 * **Project**: Qwen <- FastAPI -> Web Page
 
+AI Usage: Mostly comments and assistance with new things
+
 ## Run with Docker Compose
 
 The Compose stack runs the FastAPI wrapper and Ollama together. It expects Docker
