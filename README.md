@@ -1,4 +1,8 @@
-# local_sec_ai
+# Vetor
+The Portuguese word for vector pronounced 'vi-tour' which is a double-entendre in tech. In Cyber you analyze "attack vectors." In AI, you use "vector databases" and "vector embeddings" to process data.
+
+![Vetor](static/images/vetor_250px.png)
+
 A containerized security analyst using the AI model Qwen
 
 ## Architecture
