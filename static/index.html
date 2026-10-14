@@ -4,16 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vetor - Security AI</title>
+    <link rel="icon" href="/static/images/vetor_250px.png" type="image/png">
+    
+    <script src="/static/script.js" defer></script>
+    
 </head>
 <body>
 
-    <h1>Vetor - Your Security Analyst AI</h1>
+    <h1>Vetor - Your Security Analyst AI Tool</h1>
 
     <img src="../static/images/vetor_250px.png" alt="Vetor Logo">
 
-    
-    <p>If you are reading this the index page is working.</p>
-    <p>To do prompt generation currently, please use the /generate endpoint with a POST request and provide a prompt in the request body.</p>
+    <br>
 
+    <textarea id="prompt-input" placeholder="Enter your prompt here..." rows="5" cols="60"></textarea>
+
+    <br>
+
+    <button id="send-button" type="button">Send to Vetor</button>
+
+
+
+    <p>Prompt Box is resizable for your convenience.</p>
+    <p>Press Ctrl/Cmd + Enter to submit your prompt.</p>
+    <!-- <p>To do prompt generation currently, please use the /generate endpoint with a POST request and provide a prompt in the request body.</p> -->
+
+    <h3>Generated Output</h3>
+    <textarea id="generated-output" rows="10" cols="60" readonly aria-label="Generated output"></textarea>
+    <h3>Risk Matrix</h3>
+    <textarea id="risk-matrix" rows="10" cols="60" readonly aria-label="Risk matrix"></textarea>
 </body>
 </html>
