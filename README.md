@@ -1,9 +1,11 @@
 # Vetor
 The Portuguese word for vector pronounced 'vi-tour' which is a double-entendre in tech. In Cyber you analyze "attack vectors." In AI, you use "vector databases" and "vector embeddings" to process data.
 
-![Vetor](static/images/vetor_250px.png)
+![Vetor_gif](vetor_preview.gif)
 
 A containerized security analyst using the AI model Qwen
+
+
 
 ## Architecture
 
